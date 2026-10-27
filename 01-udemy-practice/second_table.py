@@ -1,0 +1,1 @@
+CREATE TABLE CITY(name varchar(30),country varchar(40))
