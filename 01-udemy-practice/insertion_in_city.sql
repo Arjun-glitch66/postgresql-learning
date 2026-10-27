@@ -1,0 +1,1 @@
+INSERT into CITY (name,country) values('Chennai','India'),('Mumbai','India');
