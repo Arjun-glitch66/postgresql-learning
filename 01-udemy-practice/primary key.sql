@@ -9,3 +9,6 @@ select * from photos
 
 select * from photos join users on users.id=photos.user_id;  //here we are joining the two tables already they are related by the pforeign key so we retreive where the id of users table ==user_id of photos table 
 select * from users join photos on photos.user_id=users.id; //both gives the same output 
+
+insert into photos(url,user_id) values('https',NULL); here for photos the user_id is the foregin key which points to the id in users but if u dont want to point anything u canuser null
+select * from photos;
