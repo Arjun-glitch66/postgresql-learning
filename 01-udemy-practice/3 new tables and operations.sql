@@ -1,4 +1,4 @@
-#visualisation in document image
+--visualisation in document image
 drop table users
 drop table photos
 CREATE TABLE users(
@@ -152,12 +152,29 @@ VALUES
         ('Occaecati eos possimus deleniti itaque aliquam accusamus.', 3, 4),
         ('Molestiae officia architecto eius nesciunt.', 5, 4),
         ('Minima dolorem reiciendis excepturi culpa sapiente eos deserunt ut.', 3, 3);
-#############################
+--#############################
 
 select * from comments join users on users.id=comments.user_id
-//this gives the comments x users table where the user_id in comments == id in users table because user_id in comments table is thefk referering to the id in the users table 
+--this gives the comments x users table where the user_id in comments == id in users table because user_id in comments table is thefk referering to the id in the users table 
 select * from comments join photos on photos.id=comments.photo_id
-//same thing but now its comments x photos table 
+--same thing but now its comments x photos table 
 
-##################
-select comments.id as comment_id, p.id from photos as p join comments on comments.photo_id=p.id //comments id is seleced and the column is renamed to comments_id, table photos is renamed to p and as usual joining photos X comments here the order photos x comments or comments x photos doesnt matter becuase we are specifying the 2 columns we want ..order matters when we use select * 
+--##################
+select comments.id as comment_id, p.id from photos as p join comments on comments.photo_id=p.id --comments id is seleced and the column is renamed to comments_id, table photos is renamed to p and as usual joining photos X comments here the order photos x comments or comments x photos doesnt matter becuase we are specifying the 2 columns we want ..order matters when we use select * 
+------------------
+insert into photos(url,user_id) values ('http:banner.jpg',NULL)
+--so here it doesnt refer to any id in the users table 
+------------------
+SELECT url,username from photos left join users on photos.user_id=users.id --here the left side (left join) applies for the photos refer pdf ...if users left join photos means users table is the lef side ...note order doeenst matter since we dint useed *
+-----
+insert into users(username ) values('king') ---so why we are adding in the sense as of now our users table has the id which all are referred by the photos so we need to create a new id and username so that it is not referred by any of the user_id in the photos
+SELECT *
+FROM photos
+right JOIN users
+ON photos.user_id = users.id;
+
+----------for full join also we need this king 
+SELECT *
+FROM photos
+full JOIN users
+ON photos.user_id = users.id;
