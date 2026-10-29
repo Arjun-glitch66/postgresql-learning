@@ -2,7 +2,7 @@
 -- Session and Authentication Token Storage
 -- Database: PostgreSQL
 
-CREATE TABLE users (
+CREATE TABLE users1 (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     username VARCHAR(100) NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE users (
 CREATE TABLE sessions (
     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     token_hash TEXT NOT NULL UNIQUE,
-    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    user_id UUID NOT NULL REFERENCES users1(id) ON DELETE CASCADE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     last_seen_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     expiry_at TIMESTAMPTZ NOT NULL,
