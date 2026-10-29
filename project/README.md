@@ -17,8 +17,8 @@ The database contains two tables:
 
 View the database design on dbdiagram.io:
 
-**Diagram link:** [Replace this with your public dbdiagram.io URL]
 
+[Open the Session and Authentication Token Storage ER Diagram](https://dbdiagram.io/d/6ae389c3ed134e407e45881f)
 The exported ER diagram is available in [`erd.png`](erd.png).
 
 ## Schema Features
