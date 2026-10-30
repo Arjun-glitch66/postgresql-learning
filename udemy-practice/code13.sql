@@ -36,4 +36,4 @@ An example of the books table
 | 6  | Cat in the Hat      | 4         |
 +----+---------------------+-----------+
 
-select name,count(*) from authors join books on authors.id=books.author_id group by authors.id,authors.name 
+select name,count(*) from authors join books on authors.id=books.author_id group by authors.name --or here gorup by authors.id can also be used 
