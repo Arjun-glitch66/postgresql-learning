@@ -1,0 +1,1 @@
+select name,price, case when price >400 then 'high' when price >200 then 'medium' else 'cheap' end from products
