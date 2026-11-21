@@ -9,6 +9,7 @@ It stores user account details separately from login sessions, allowing one user
 The database contains two tables:
 - **`users1`** — Stores user IDs, usernames, password hashes, account creation and update timestamps, and soft-deletion information.
 - **`sessions`** — Stores session IDs, token hashes, the associated user ID, activity timestamps, expiry information, and revocation information.
+
 ### Entity Relationship Diagram
 View the database design on dbdiagram.io:
 
