@@ -7,9 +7,7 @@ This project designs a PostgreSQL relational database schema for managing user a
 It stores user account details separately from login sessions, allowing one user to have multiple sessions across different devices. Session token hashes and timestamps support secure session management.
 
 ## Database Design
-
 The database contains two tables:
-
 - **`users1`** — Stores user IDs, usernames, password hashes, account creation and update timestamps, and soft-deletion information.
 - **`sessions`** — Stores session IDs, token hashes, the associated user ID, activity timestamps, expiry information, and revocation information.
 
